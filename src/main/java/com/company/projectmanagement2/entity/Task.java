@@ -45,9 +45,11 @@ public class Task {
     @Lob
     private String description;
 
+    @NotNull
     @PositiveOrZero
     @Column(name = "ESTIMATION")
     private Integer estimation;
+
     @OnDeleteInverse(DeletePolicy.CASCADE)
     @JoinColumn(name = "PROJECT_ID", nullable = false)
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
